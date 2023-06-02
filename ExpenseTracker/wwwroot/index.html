@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <form action="javascript:void(0);" method="post" onsubmit="addItem()">
+            <div class="container">
+                <div class="sub-container">
+
+                    <div class="user-amount-container">
+                        <h3>Enter Expenses</h3>
+                        <p class="hide error" id="product-title-error">
+                            Values cannot be empty
+                        </p>
+                        <input type="text"
+                               class="product-title"
+                               id="product-title"
+                               placeholder="Description" required />
+                        <input type="number"
+                               id="user-amount"
+                               placeholder="Amount" required />
+                        <select id="select_listc" required>
+                            <option value="none">Category</option>
+                        </select><br>
+                        <select id="select_listp" required>
+                            <option value="none">PaymentMethod</option>
+                        </select><br><br>
+                        <h5>Created Date: </h5>
+                        <input type="date"
+                               id="cdate" required />
+                        <h5>Date: </h5>
+                        <input type="date"
+                               id="date"
+                               required />
+                        <button class="submit" id="add-expenses">Add</button> <br>
+
+                    </div>
+                </div>
+
+                    <div class="output-container flex-space">
+                        <div class="totalExpenses">
+                            <p>Total Expenses For Today</p>
+                            <span id="expenditure-value"></span>
+                        </div><br>
+
+                    </div>
+
+            </div>
+        </form>
+
+
+    </div>
+
+    <script src="script.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getallCategory();
+        getallPayments();
+        totalExpenses();
+    </script>
+
+</body>
+</html>
